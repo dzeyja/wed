@@ -20,10 +20,12 @@ body {
   display: flex;
   flex-direction: column;
   gap: 18px;
+  overflow: hidden;
   padding: 18px 0 28px;
 }
 
 .card {
+  position: relative;
   width: 100%;
   aspect-ratio: 9 / 16;
   background: #f8f0ea;
@@ -97,7 +99,7 @@ body {
 
 .photo-arc-wrapper {
   position: absolute;
-  top: -28%;
+  top: -23%;
   left: 13%;
   width: 106%;
   height: 130%;
