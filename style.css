@@ -1,0 +1,317 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f5eee9;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+
+.deck {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 18px 0 28px;
+}
+
+.card {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  background: #f8f0ea;
+  border-radius: 32px;
+  overflow: hidden;
+  padding: 24px 20px;
+  color: #5b2a2b;
+}
+
+.mute-chip {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: #5b2328;
+  color: #fdf6f2;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+  font-weight: 400;
+}
+
+.name {
+  position: absolute;
+  top: 52px;
+  left: 38px;
+  font-family: "Great Vibes", "Playfair Display", serif;
+  font-size: 60px;
+  color: #7a3a3d;
+}
+
+.subtitle {
+  position: absolute;
+  top: 126px;
+  left: 38px;
+  font-family: "Playfair Display", serif;
+  font-size: 19px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #5b2a2b;
+}
+
+.left-medallion {
+  position: absolute;
+  right: -30%;
+  top: 25%;
+  width: 107%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0) 46%),
+    url("assets/left-circle.png");
+  background-size: cover;
+  background-position: center;
+  border: 10px solid rgba(255, 255, 255, 0.75);
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.18),
+    inset 0 0 0 1px rgba(120, 70, 70, 0.12);
+  transform: rotate(-9deg);
+  z-index: 3;
+}
+
+.left-medallion::after {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(120, 70, 70, 0.18);
+}
+
+.photo-arc-wrapper {
+  position: absolute;
+  top: -28%;
+  left: 13%;
+  width: 106%;
+  height: 130%;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-arc {
+  position: absolute;
+  bottom: -40%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.photo-arc::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("assets/photo_2026-03-11_14-20-50-dac0c638-a68c-436e-913a-ffbedb6dbc32.png");
+  background-size: cover;
+  background-position: center right;
+  transform: translateY(10%);
+}
+
+.arc-text-svg {
+  position: absolute;
+  inset: 0;
+  width: 120%;
+  height: 120%;
+  transform-origin: 50% 50%;
+  animation: arc-spin 22s linear infinite;
+  z-index: 2;
+}
+
+.arc-text {
+  font-family: "Playfair Display", serif;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: lowercase;
+  fill: rgba(90, 50, 50, 0.7);
+}
+
+@keyframes arc-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.date {
+  position: absolute;
+  bottom: 12%;
+  left: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: "Playfair Display", serif;
+  font-size: 26px;
+  color: #5f4142;
+}
+
+.date span {
+  line-height: 1;
+}
+
+.date span:nth-child(1),
+.date span:nth-child(4) {
+  font-size: 34px;
+  color: rgba(112, 88, 88, 0.25);
+  transform: translateX(-6px);
+}
+
+.date span:nth-child(2),
+.date span:nth-child(3) {
+  letter-spacing: 0.12em;
+}
+
+.date span:nth-child(2)::after,
+.date span:nth-child(3)::after {
+  content: "·";
+  display: inline-block;
+  margin-left: 6px;
+  opacity: 0.7;
+}
+
+.logo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 140px;
+  height: 110px;
+  background: #b6707b;
+  border-top-left-radius: 140px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 16px;
+  color: #fdf6f2;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.logo-inner {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Вторая страница */
+
+.card--page2 {
+  padding-top: 0;
+}
+
+.page2-photo-wrap {
+  position: relative;
+  margin: 0 -20px 12px;
+  height: 54%;
+  background: #8a3a3f url("assets/page2-top.png") center/cover no-repeat;
+  border-bottom-right-radius: 120px;
+  overflow: hidden;
+}
+
+
+.card--page2 .arc-text-svg {
+  width: 140%;
+  height: 140%;
+  top: auto;
+  bottom: -40px;
+  left: -40px;
+}
+
+.page2-content {
+  margin-top: 32px;
+  padding: 0 16px 80px;
+  text-align: center;
+  color: #702f34;
+}
+
+.page2-title {
+  font-family: "Great Vibes", "Playfair Display", serif;
+  font-size: 33px;
+  margin-bottom: 18px;
+}
+
+.page2-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.7;
+  margin-bottom: 26px;
+}
+
+.page2-bottom {
+  font-family: "Playfair Display", serif;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.7;
+}
+
+@media (max-width: 380px) {
+  .card {
+    border-radius: 26px;
+  }
+
+  .name {
+    font-size: 38px;
+    left: 26px;
+  }
+
+  .subtitle {
+    left: 26px;
+    font-size: 14px;
+  }
+
+  .left-medallion {
+    right: -120px;
+    top: 150px;
+    width: 400px;
+    border-width: 9px;
+  }
+
+  .mute-chip {
+    top: 18px;
+    right: 18px;
+    font-size: 10px;
+  }
+
+  .date {
+    left: 20px;
+    font-size: 24px;
+  }
+
+  .logo {
+    width: 120px;
+    height: 95px;
+  }
+
+  .card--page2 .page2-photo-oval {
+    width: 230px;
+    height: 310px;
+    left: -34px;
+    bottom: -74px;
+  }
+}
+
