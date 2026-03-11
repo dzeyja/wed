@@ -271,6 +271,77 @@ body {
   line-height: 1.7;
 }
 
+/* Третья страница */
+
+.card--page3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6% 8% 0;
+}
+
+.page3-top-text {
+  width: 100%;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(11px, 3.4vw, 14px);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #5b2a2b;
+  margin-bottom: 2%;
+}
+
+.page3-name {
+  font-family: "Great Vibes", "Playfair Display", serif;
+  font-size: clamp(32px, 10vw, 48px);
+  color: #7a3a3d;
+  margin-bottom: 4%;
+}
+
+.page3-invite {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(12px, 3.8vw, 16px);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.8;
+  color: #5b2a2b;
+  margin-bottom: 6%;
+}
+
+.card--page3 .page3-date {
+  position: absolute;
+  left: 6%;
+  bottom: 10%;
+}
+
+.page3-circle {
+  position: absolute;
+  right: 0%;
+  bottom: 22%;
+  width: 58%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: url("assets/saukele.png") center/cover no-repeat;
+  border: 8px solid rgba(255, 255, 255, 0.7);
+  box-shadow:
+    0 12px 36px rgba(0, 0, 0, 0.15),
+    inset 0 0 0 1px rgba(120, 70, 70, 0.1);
+  z-index: 1;
+}
+
+.page3-arc-svg {
+  position: absolute;
+  right: -6%;
+  bottom: 2%;
+  width: 72%;
+  height: 72%;
+  transform-origin: 50% 50%;
+  animation: arc-spin 22s linear infinite;
+  z-index: 2;
+  pointer-events: none;
+}
+
 @media (max-width: 380px) {
   .card {
     border-radius: 26px;
