@@ -37,13 +37,13 @@ body {
 
 .mute-chip {
   position: absolute;
-  top: 24px;
-  right: 24px;
-  padding: 8px 18px;
+  top: 3.2%;
+  right: 5.7%;
+  padding: 1% 4.3%;
   border-radius: 999px;
   background: #5b2328;
   color: #fdf6f2;
-  font-size: 11px;
+  font-size: clamp(9px, 2.6vw, 11px);
   letter-spacing: 0.05em;
   text-transform: lowercase;
   font-weight: 400;
@@ -51,19 +51,19 @@ body {
 
 .name {
   position: absolute;
-  top: 52px;
-  left: 38px;
+  top: 7%;
+  left: 9%;
   font-family: "Great Vibes", "Playfair Display", serif;
-  font-size: 60px;
+  font-size: clamp(40px, 14.3vw, 60px);
   color: #7a3a3d;
 }
 
 .subtitle {
   position: absolute;
-  top: 126px;
-  left: 38px;
+  top: 17%;
+  left: 9%;
   font-family: "Playfair Display", serif;
-  font-size: 19px;
+  font-size: clamp(14px, 4.5vw, 19px);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #5b2a2b;
@@ -81,7 +81,7 @@ body {
     url("assets/left-circle.png");
   background-size: cover;
   background-position: center;
-  border: 10px solid rgba(255, 255, 255, 0.75);
+  border: 2.4% solid rgba(255, 255, 255, 0.75);
   box-shadow:
     0 18px 45px rgba(0, 0, 0, 0.18),
     inset 0 0 0 1px rgba(120, 70, 70, 0.12);
@@ -160,12 +160,12 @@ body {
 .date {
   position: absolute;
   bottom: 12%;
-  left: 26px;
+  left: 6%;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 1.6%;
   font-family: "Playfair Display", serif;
-  font-size: 26px;
+  font-size: clamp(20px, 6.2vw, 26px);
   color: #5f4142;
 }
 
@@ -175,7 +175,7 @@ body {
 
 .date span:nth-child(1),
 .date span:nth-child(4) {
-  font-size: 34px;
+  font-size: clamp(26px, 8.1vw, 34px);
   color: rgba(112, 88, 88, 0.25);
   transform: translateX(-6px);
 }
@@ -197,8 +197,8 @@ body {
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 140px;
-  height: 110px;
+  width: 33%;
+  height: 15%;
   background: #b6707b;
   border-top-left-radius: 140px;
   display: flex;
