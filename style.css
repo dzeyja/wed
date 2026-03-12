@@ -611,6 +611,83 @@ body {
   object-position: center;
 }
 
+.page7-countdown-wrap {
+  position: absolute;
+  bottom: 6%;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.page7-countdown-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(11px, 3.4vw, 15px);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #5b2a2b;
+  margin-bottom: 4%;
+}
+
+.page7-countdown {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2%;
+}
+
+.page7-cd-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page7-cd-circle {
+  --progress: 0deg;
+  position: relative;
+  width: clamp(46px, 14vw, 64px);
+  height: clamp(46px, 14vw, 64px);
+  border-radius: 50%;
+  background: conic-gradient(
+    #7a3a3d var(--progress),
+    rgba(91, 42, 43, 0.15) var(--progress)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(18px, 5.5vw, 26px);
+  color: #5b2a2b;
+  margin-bottom: 6px;
+}
+
+.page7-cd-circle::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: 50%;
+  background: #f8f0ea;
+}
+
+.page7-cd-circle span {
+  position: relative;
+  z-index: 1;
+}
+
+.page7-cd-label {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(7px, 2.2vw, 10px);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(91, 42, 43, 0.7);
+}
+
+.page7-cd-sep {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(18px, 5.5vw, 26px);
+  color: rgba(91, 42, 43, 0.4);
+  margin-top: clamp(10px, 3vw, 16px);
+}
+
 @media (max-width: 380px) {
   .card {
     border-radius: 26px;

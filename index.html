@@ -182,7 +182,63 @@
         <img src="assets/bride-hand.png" alt="" />
       </div>
 
-     
+      <div class="page7-countdown-wrap">
+        <div class="page7-countdown-title">Тойға дейін қалды:</div>
+
+        <div class="page7-countdown" id="countdown">
+          <div class="page7-cd-item">
+            <div class="page7-cd-circle"><span id="cd-days">0</span></div>
+            <div class="page7-cd-label">КҮН</div>
+          </div>
+          <div class="page7-cd-sep">:</div>
+          <div class="page7-cd-item">
+            <div class="page7-cd-circle"><span id="cd-hours">0</span></div>
+            <div class="page7-cd-label">САҒАТ</div>
+          </div>
+          <div class="page7-cd-sep">:</div>
+          <div class="page7-cd-item">
+            <div class="page7-cd-circle"><span id="cd-mins">0</span></div>
+            <div class="page7-cd-label">МИНУТ</div>
+          </div>
+          <div class="page7-cd-sep">:</div>
+          <div class="page7-cd-item">
+            <div class="page7-cd-circle"><span id="cd-secs">0</span></div>
+            <div class="page7-cd-label">СЕКУНД</div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const target = new Date("2026-08-30T18:00:00+05:00");
+          const totalDays = Math.ceil((target - Date.now()) / 86400000);
+
+          function setProgress(id, fraction) {
+            const el = document.getElementById(id);
+            el.parentElement.style.setProperty("--progress", (fraction * 360) + "deg");
+          }
+
+          function tick() {
+            const diff = Math.max(0, target - Date.now());
+            const d = Math.floor(diff / 86400000);
+            const h = Math.floor((diff % 86400000) / 3600000);
+            const m = Math.floor((diff % 3600000) / 60000);
+            const s = Math.floor((diff % 60000) / 1000);
+
+            document.getElementById("cd-days").textContent = d;
+            document.getElementById("cd-hours").textContent = h;
+            document.getElementById("cd-mins").textContent = m;
+            document.getElementById("cd-secs").textContent = s;
+
+            setProgress("cd-days", d / totalDays);
+            setProgress("cd-hours", h / 24);
+            setProgress("cd-mins", m / 60);
+            setProgress("cd-secs", s / 60);
+          }
+          tick();
+          setInterval(tick, 1000);
+        })();
+      </script>
     </section>
   </div>
 </body>
