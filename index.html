@@ -8,14 +8,14 @@
   <!-- Похожие шрифты с Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400&family=Pacifico&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <button type="button" class="mute-chip mute-chip--fixed">әуенді өшіру</button>
+
   <div class="deck">
     <section class="card">
-      <div class="mute-chip">әуенді өшіру</div>
-
       <div class="name">Ayazhan</div>
       <div class="subtitle">QYZ UZATU</div>
 
@@ -37,10 +37,9 @@
       </div>
 
       <div class="date">
-        <span>30</span>
-        <span>30</span>
+        <span>15</span>
         <span>08</span>
-        <span>25</span>
+        <span>26</span>
       </div>
 
     </section>
@@ -77,10 +76,9 @@
       </div>
 
       <div class="date page3-date">
-        <span>30</span>
-        <span>30</span>
+        <span>15</span>
         <span>08</span>
-        <span>25</span>
+        <span>26</span>
       </div>
 
       <div class="page3-circle"></div>
@@ -114,12 +112,6 @@
 
       <div class="page4-schedule">
         <div class="page4-time-block">
-          <div class="page4-time-ghost">18:00</div>
-          <div class="page4-time">18:00</div>
-          <div class="page4-label">Сырға салу<br />рәсімі</div>
-        </div>
-
-        <div class="page4-time-block">
           <div class="page4-time-ghost">19:00</div>
           <div class="page4-time">19:00</div>
           <div class="page4-label">Ұзату тойдың<br />басталуы</div>
@@ -139,20 +131,20 @@
         <tbody>
           <tr><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td></tr>
           <tr><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
-          <tr><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td></tr>
+          <tr><td>11</td><td>12</td><td>13</td><td>14</td><td class="cal-active">15</td><td>16</td><td>17</td></tr>
           <tr><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr>
-          <tr><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td class="cal-active">30</td><td>31</td></tr>
+          <tr><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td></tr>
         </tbody>
       </table>
 
       <div class="page6-label">Мекен-жайымыз:</div>
 
       <div class="page6-address">
-        Шымкент қаласы,<br />
-        Мұстафа Шоқай көшесі, 65
+        Үржара ауылы,<br />
+        Абылай хана көшесі, 86
       </div>
 
-      <div class="page6-venue">Тұмар</div>
+      <div class="page6-venue">Айтим</div>
 
       <div class="page6-venue-sub">мейрамханасы</div>
 
@@ -207,7 +199,7 @@
 
       <script>
         (function () {
-          const target = new Date("2026-08-30T18:00:00+05:00");
+          const target = new Date("2026-08-15T18:00:00+05:00");
           const totalDays = Math.ceil((target - Date.now()) / 86400000);
 
           function setProgress(id, fraction) {
@@ -237,12 +229,51 @@
         })();
       </script>
     </section>
+
+    <section class="card card--rsvp">
+      <p class="rsvp-intro">
+        Жұбыңызбен келетін болсаңыз, есімдеріңізді бірге жазуыңызды өтінеміз!
+      </p>
+
+      <form class="rsvp-form" action="#" method="get" onsubmit="return false;">
+        <label class="rsvp-field">
+          <span class="visually-hidden">Есіміңіз</span>
+          <input
+            type="text"
+            name="name"
+            class="rsvp-input"
+            placeholder="Есіміңіз"
+            aria-label="Есіміңіз"
+            autocomplete="name"
+          />
+        </label>
+
+        <fieldset class="rsvp-options">
+          <label class="rsvp-radio">
+            <input type="radio" name="attendance" value="yes" />
+            <span>Келемін</span>
+          </label>
+          <label class="rsvp-radio">
+            <input type="radio" name="attendance" value="with_spouse" />
+            <span>Жұбайыммен келемін</span>
+          </label>
+          <label class="rsvp-radio">
+            <input type="radio" name="attendance" value="no" />
+            <span>Өкінішке орай, келе алмаймын</span>
+          </label>
+        </fieldset>
+      </form>
+
+      <div class="logo logo--rsvp">
+        <div class="logo-inner">AQBOSA<br /><span class="logo-sub">SHAQYRU</span></div>
+      </div>
+    </section>
   </div>
 
   <audio
     id="bg-music"
     src="10494-nurjan-kermenbaev-kazak-kyzdary.mp3"
-    loop
+    data-start-at="75"
     playsinline
     preload="auto"
   ></audio>
@@ -252,13 +283,28 @@
       var audio = document.getElementById("bg-music");
       if (!audio) return;
 
+      var startSec = parseFloat(audio.getAttribute("data-start-at") || "0", 10);
+      if (isNaN(startSec) || startSec < 0) startSec = 0;
+
+      function seekToStart() {
+        try {
+          audio.currentTime = startSec;
+        } catch (e) {}
+      }
+
+      audio.addEventListener("loadedmetadata", function () {
+        if (startSec > 0 && audio.currentTime < 0.5) seekToStart();
+      });
+
       audio.addEventListener("ended", function () {
-        audio.currentTime = 0;
+        seekToStart();
         audio.play().catch(function () {});
       });
 
       function tryPlay() {
         if (audio.muted) return;
+        if (audio.ended) seekToStart();
+        else if (audio.paused && startSec > 0 && audio.currentTime < 0.5) seekToStart();
         return audio.play().catch(function () {});
       }
 
