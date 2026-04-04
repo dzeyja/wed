@@ -47,6 +47,8 @@ body {
   letter-spacing: 0.05em;
   text-transform: lowercase;
   font-weight: 400;
+  cursor: pointer;
+  z-index: 20;
 }
 
 .name {
@@ -503,6 +505,7 @@ body {
   font-family: "Great Vibes", "Playfair Display", serif;
   font-size: clamp(24px, 7.5vw, 34px);
   color: #7a3a3d;
+  margin-top: 100px;
   margin-bottom: 5%;
 }
 

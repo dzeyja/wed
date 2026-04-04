@@ -144,9 +144,6 @@
           <tr><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td class="cal-active">30</td><td>31</td></tr>
         </tbody>
       </table>
-    </section>
-
-    <section class="card card--page6">
 
       <div class="page6-label">Мекен-жайымыз:</div>
 
@@ -241,6 +238,74 @@
       </script>
     </section>
   </div>
+
+  <audio
+    id="bg-music"
+    src="10494-nurjan-kermenbaev-kazak-kyzdary.mp3"
+    loop
+    playsinline
+    preload="auto"
+  ></audio>
+
+  <script>
+    (function () {
+      var audio = document.getElementById("bg-music");
+      if (!audio) return;
+
+      audio.addEventListener("ended", function () {
+        audio.currentTime = 0;
+        audio.play().catch(function () {});
+      });
+
+      function tryPlay() {
+        if (audio.muted) return;
+        return audio.play().catch(function () {});
+      }
+
+      function onFirstInteraction() {
+        tryPlay();
+      }
+      document.addEventListener("click", onFirstInteraction, { once: true });
+      document.addEventListener("touchstart", onFirstInteraction, { once: true, passive: true });
+
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "visible" && !audio.muted) tryPlay();
+      });
+
+      tryPlay();
+
+      function syncMuteChips() {
+        var chips = document.querySelectorAll(".mute-chip");
+        for (var i = 0; i < chips.length; i++) {
+          chips[i].textContent = audio.muted ? "әуенді қосу" : "әуенді өшіру";
+        }
+      }
+
+      document.querySelectorAll(".mute-chip").forEach(function (chip) {
+        chip.setAttribute("role", "button");
+        chip.setAttribute("tabindex", "0");
+        chip.addEventListener("click", function (e) {
+          e.stopPropagation();
+          if (audio.muted) {
+            audio.muted = false;
+            tryPlay();
+          } else if (audio.paused) {
+            tryPlay();
+          } else {
+            audio.muted = true;
+          }
+          syncMuteChips();
+        });
+        chip.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            chip.click();
+          }
+        });
+      });
+      syncMuteChips();
+    })();
+  </script>
 </body>
 </html>
 
