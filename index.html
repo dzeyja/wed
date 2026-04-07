@@ -275,7 +275,7 @@
     src="10494-nurjan-kermenbaev-kazak-kyzdary.mp3"
     data-start-at="75"
     playsinline
-    preload="auto"
+    preload="metadata"
   ></audio>
 
   <script>
@@ -286,9 +286,11 @@
       var startSec = parseFloat(audio.getAttribute("data-start-at") || "0");
       if (isNaN(startSec) || startSec < 0) startSec = 0;
       var didInitialSeek = false;
+      var seekingToStart = false;
 
       function seekToStart() {
         try {
+          seekingToStart = true;
           audio.currentTime = startSec;
           didInitialSeek = true;
         } catch (e) {}
@@ -302,6 +304,9 @@
 
       audio.addEventListener("loadedmetadata", ensureInitialSeek);
       audio.addEventListener("play", ensureInitialSeek);
+      audio.addEventListener("seeked", function () {
+        seekingToStart = false;
+      });
 
       audio.addEventListener("ended", function () {
         didInitialSeek = false;
@@ -311,8 +316,19 @@
 
       function tryPlay() {
         if (audio.muted) return;
-        ensureInitialSeek();
-        return audio.play().catch(function () {});
+        // На мобильных seek часто игнорируется до успешного play().
+        // Поэтому: сначала пытаемся play(), потом (если надо) прыгаем на startSec и продолжаем.
+        return audio.play().then(function () {
+          if (startSec <= 0 || didInitialSeek) return;
+
+          // Если метаданные ещё не готовы — подождём и прыгнем позже.
+          if (audio.readyState < 1) return;
+
+          seekToStart();
+
+          // Иногда после seek iOS ставит на паузу — дожимаем play().
+          if (audio.paused) return audio.play().catch(function () {});
+        }).catch(function () {});
       }
 
       function onFirstInteraction() {
