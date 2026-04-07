@@ -283,28 +283,35 @@
       var audio = document.getElementById("bg-music");
       if (!audio) return;
 
-      var startSec = parseFloat(audio.getAttribute("data-start-at") || "0", 10);
+      var startSec = parseFloat(audio.getAttribute("data-start-at") || "0");
       if (isNaN(startSec) || startSec < 0) startSec = 0;
+      var didInitialSeek = false;
 
       function seekToStart() {
         try {
           audio.currentTime = startSec;
+          didInitialSeek = true;
         } catch (e) {}
       }
 
-      audio.addEventListener("loadedmetadata", function () {
-        if (startSec > 0 && audio.currentTime < 0.5) seekToStart();
-      });
+      function ensureInitialSeek() {
+        if (didInitialSeek || startSec <= 0) return;
+        // metadata should be available to seek reliably
+        if (audio.readyState >= 1) seekToStart();
+      }
+
+      audio.addEventListener("loadedmetadata", ensureInitialSeek);
+      audio.addEventListener("play", ensureInitialSeek);
 
       audio.addEventListener("ended", function () {
+        didInitialSeek = false;
         seekToStart();
         audio.play().catch(function () {});
       });
 
       function tryPlay() {
         if (audio.muted) return;
-        if (audio.ended) seekToStart();
-        else if (audio.paused && startSec > 0 && audio.currentTime < 0.5) seekToStart();
+        ensureInitialSeek();
         return audio.play().catch(function () {});
       }
 
