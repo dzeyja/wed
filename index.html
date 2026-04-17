@@ -10,6 +10,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400&family=Pacifico&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <script>
+    // ОПАСНО: "напрямую в бота" = токен будет публичным в исходнике страницы.
+    // Но по вашей просьбе: вставьте сюда данные бота.
+    window.__TELEGRAM_BOT_TOKEN__ = "8643616244:AAEbaAOUWTBvXKX9YoObUuw_ryXz6jr8HJQ"; // пример: "123456789:ABCDEF..."
+    window.__TELEGRAM_CHAT_ID__ = "626564257";   // пример: "123456789" или "-1001234567890" (группа)
+
+    // Если всё-таки используете прокси (worker/сервер), укажите URL сюда.
+    window.__RSVP_ENDPOINT__ = "";
+  </script>
 </head>
 <body>
   <button type="button" class="mute-chip mute-chip--fixed">әуенді өшіру</button>
@@ -17,7 +26,7 @@
   <div class="deck">
     <section class="card">
       <div class="name">Ayazhan</div>
-      <div class="subtitle">QYZ UZATU</div>
+      <div class="subtitle">Syrga salu</div>
 
       <div class="left-medallion" aria-hidden="true"></div>
 
@@ -37,8 +46,8 @@
       </div>
 
       <div class="date">
-        <span>15</span>
-        <span>08</span>
+        <span>29</span>
+        <span>04</span>
         <span>26</span>
       </div>
 
@@ -69,15 +78,15 @@
       <div class="page3-name">Аяжанның</div>
 
       <div class="page3-invite">
-        ұзату тойына арналған<br />
+        сырға салу тойына арналған<br />
         ақ дастарханымыздың<br />
         қадірлі қонағы болуға<br />
         шақырамыз!
       </div>
 
-      <div class="date page3-date">
-        <span>15</span>
-        <span>08</span>
+      <div class="date">
+        <span>29</span>
+        <span>04</span>
         <span>26</span>
       </div>
 
@@ -114,13 +123,13 @@
         <div class="page4-time-block">
           <div class="page4-time-ghost">19:00</div>
           <div class="page4-time">19:00</div>
-          <div class="page4-label">Ұзату тойдың<br />басталуы</div>
+          <div class="page4-label">Сырға салудың<br />басталуы</div>
         </div>
       </div>
     </section>
 
     <section class="card card--page5">
-      <h2 class="cal-month">ТАМЫЗ</h2>
+      <h2 class="cal-month">СӘУІР</h2>
 
       <table class="cal-table">
         <thead>
@@ -129,11 +138,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td></tr>
-          <tr><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
-          <tr><td>11</td><td>12</td><td>13</td><td>14</td><td class="cal-active">15</td><td>16</td><td>17</td></tr>
-          <tr><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr>
-          <tr><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td></tr>
+          <tr><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+          <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
+          <tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
+          <tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr>
+          <tr><td>27</td><td>28</td><td class="cal-active">29</td><td>30</td><td></td><td></td><td></td></tr>
         </tbody>
       </table>
 
@@ -141,10 +150,10 @@
 
       <div class="page6-address">
         Үржар ауылы,<br />
-        Абылай хана көшесі, 86
+        Абылай хана көшесі, 146
       </div>
 
-      <div class="page6-venue">Айтим</div>
+      <div class="page6-venue">Рахмет</div>
 
       <div class="page6-venue-sub">мейрамханасы</div>
 
@@ -153,7 +162,7 @@
         басыңыз
       </div>
 
-      <a href="https://2gis.kz/semey/geo/70030076684238503/81.622034%2C47.089582?m=81.623055%2C47.089283%2F18.91%2Fr%2F-16.19" target="_blank" class="page6-btn">
+      <a href="https://2gis.kz/semey/firm/70000001082579320/81.63738%2C47.084182?m=81.637568%2C47.084219%2F19.24%2Fp%2F6.06%2Fr%2F11.22" target="_blank" class="page6-btn">
         карта
       </a>
     </section>
@@ -172,7 +181,7 @@
       </div>
 
       <div class="page7-countdown-wrap">
-        <div class="page7-countdown-title">Тойға дейін қалды:</div>
+        <div class="page7-countdown-title">Қанша уақыт қалды:</div>
 
         <div class="page7-countdown" id="countdown">
           <div class="page7-cd-item">
@@ -199,7 +208,7 @@
 
       <script>
         (function () {
-          const target = new Date("2026-08-15T18:00:00+05:00");
+          const target = new Date("2026-04-29T18:00:00+05:00");
           const totalDays = Math.ceil((target - Date.now()) / 86400000);
 
           function setProgress(id, fraction) {
@@ -235,7 +244,7 @@
         Жұбыңызбен келетін болсаңыз, есімдеріңізді бірге жазуыңызды өтінеміз!
       </p>
 
-      <form class="rsvp-form" action="#" method="get" onsubmit="return false;">
+      <form class="rsvp-form" id="rsvp-form" action="#" method="post">
         <label class="rsvp-field">
           <span class="visually-hidden">Есіміңіз</span>
           <input
@@ -245,6 +254,7 @@
             placeholder="Есіміңіз"
             aria-label="Есіміңіз"
             autocomplete="name"
+            required
           />
         </label>
 
@@ -262,11 +272,13 @@
             <span>Өкінішке орай, келе алмаймын</span>
           </label>
         </fieldset>
+
+        <button type="submit" class="page6-btn" style="width:100%; margin-top: 12px;">
+          Жіберу
+        </button>
+        <div id="rsvp-status" style="margin-top:10px; text-align:center; font-size:14px;"></div>
       </form>
 
-      <div class="logo logo--rsvp">
-        <div class="logo-inner">AQBOSA<br /><span class="logo-sub">SHAQYRU</span></div>
-      </div>
     </section>
   </div>
 
@@ -373,6 +385,117 @@
         });
       });
       syncMuteChips();
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var form = document.getElementById("rsvp-form");
+      if (!form) return;
+
+      var statusEl = document.getElementById("rsvp-status");
+      function setStatus(text, isError) {
+        if (!statusEl) return;
+        statusEl.textContent = text || "";
+        statusEl.style.color = isError ? "#9b1c1c" : "#1b5e20";
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        setStatus("");
+
+        var fd = new FormData(form);
+        var name = (fd.get("name") || "").toString().trim();
+        var attendance = (fd.get("attendance") || "").toString();
+
+        if (!name) {
+          setStatus("Есіміңізді жазыңыз", true);
+          return;
+        }
+        if (!attendance) {
+          setStatus("Нұсқаны таңдаңыз", true);
+          return;
+        }
+
+        var btn = form.querySelector("button[type='submit']");
+        if (btn) btn.disabled = true;
+        setStatus("Жіберілуде...");
+
+        var endpoint =
+          typeof window.__RSVP_ENDPOINT__ === "string" && window.__RSVP_ENDPOINT__.replace(/\s/g, "").length > 0
+            ? window.__RSVP_ENDPOINT__.trim()
+            : "";
+
+        // 1) Если задан endpoint — шлём туда (worker/сервер).
+        if (endpoint) {
+          fetch(endpoint, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name: name, attendance: attendance })
+          })
+            .then(function (res) { return res.json().catch(function () { return null; }).then(function (j) { return { ok: res.ok, status: res.status, json: j }; }); })
+            .then(function (r) {
+              if (!r.ok) {
+                var msg = (r.json && r.json.error) ? r.json.error : ("Қате: " + r.status);
+                setStatus(msg, true);
+                return;
+              }
+              setStatus("Рақмет! Жауабыңыз қабылданды.");
+              form.reset();
+            })
+            .catch(function () {
+              setStatus("Желі қатесі. Қайта көріңіз.", true);
+            })
+            .finally(function () {
+              if (btn) btn.disabled = false;
+            });
+          return;
+        }
+
+        // 2) Без клауда: шлём напрямую в бота через GET (без CORS-чтения ответа).
+        var token =
+          typeof window.__TELEGRAM_BOT_TOKEN__ === "string"
+            ? window.__TELEGRAM_BOT_TOKEN__.trim()
+            : "";
+        var chatId =
+          (typeof window.__TELEGRAM_CHAT_ID__ === "string" || typeof window.__TELEGRAM_CHAT_ID__ === "number")
+            ? String(window.__TELEGRAM_CHAT_ID__).trim()
+            : "";
+
+        if (!token || !chatId) {
+          setStatus("Бот бапталмаған: TOKEN және CHAT_ID толтырыңыз", true);
+          if (btn) btn.disabled = false;
+          return;
+        }
+
+        var attendanceText =
+          attendance === "yes"
+            ? "Келемін"
+            : (attendance === "with_spouse"
+                ? "Жұбайыммен келемін"
+                : (attendance === "no" ? "Өкінішке орай, келе алмаймын" : attendance));
+
+        var text = "RSVP жауап\n" + "Аты: " + name + "\n" + "Жауабы: " + attendanceText;
+        var apiUrl =
+          "https://api.telegram.org/bot" +
+          encodeURIComponent(token) +
+          "/sendMessage?chat_id=" +
+          encodeURIComponent(chatId) +
+          "&text=" +
+          encodeURIComponent(text) +
+          "&disable_web_page_preview=true";
+
+        // Через <img> уходим от CORS. Ошибку доставки в Telegram мы тут не узнаем.
+        try {
+          var img = new Image();
+          img.referrerPolicy = "no-referrer";
+          img.src = apiUrl;
+        } catch (e) {}
+
+        setStatus("Жіберілді.");
+        form.reset();
+        if (btn) btn.disabled = false;
+      });
     })();
   </script>
 </body>

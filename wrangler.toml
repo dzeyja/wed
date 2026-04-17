@@ -1,0 +1,7 @@
+# npx wrangler deploy
+# wrangler secret put TELEGRAM_BOT_TOKEN
+# wrangler secret put TELEGRAM_CHAT_ID
+
+name = "visit-rsvp"
+main = "cloudflare-rsvp-worker.js"
+compatibility_date = "2024-11-01"

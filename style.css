@@ -508,7 +508,7 @@ body {
   color: #5b2a2b;
   line-height: 1;
   letter-spacing: 0.04em;
-  margin-bottom: 6px;
+  margin-bottom: clamp(10px, 2vh, 18px);
 }
 
 .page4-label {
@@ -599,7 +599,7 @@ body {
   font-size: clamp(24px, 7.5vw, 34px);
   font-weight: 500;
   color: #7a3a3d;
-  margin-top: 100px;
+  margin-top: clamp(18px, 4.5vh, 44px);
   margin-bottom: 5%;
 }
 
